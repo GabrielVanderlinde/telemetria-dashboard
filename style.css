@@ -1,4 +1,4 @@
-/* Reset báscio: Tira as margens brancas e chatas do Navegador */
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -10,120 +10,151 @@ body {
     color: white;
 }
 
-/*--LAYOUT GRID*/
+/*--LAYOUT GRID--*/
 .painel-grid {
     display: grid;
     height: 100vh;
-    /* Força a altura ser 100% da tela */
-
-    /*Definindo as Colunas (Largura)*/
-    /*Coluna 1: 250px fixos (Menu)*/
-    /*Coluna 2: 1fr (O resto do espaço para o conteúdo*/
     grid-template-columns: 250px 1fr;
-
-    /*Definindo as Linhas (Altura)*/
-    /*Linha 1: 60px fixos (Topo)*/
-    /*Linha 2: 1fr (O resto da altura para o conteúdo*/
+    /* Colunas */
     grid-template-rows: 60px 1fr;
-
-    /*Mapa Visual*/
+    /* Linhas */
     grid-template-areas:
         "menu topo"
         "menu principal";
+}
 
-    /*COonexão de Classes HTML no Mapa*/
+/* Conexão de Classes HTML no Mapa */
+.barra-lateral {
+    grid-area: menu;
+    background-color: #1a1a2e;
+    color: #a0a0a0;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 30px;
+    border-right: 1px solid #2c2c44;
+}
 
-    .barra-lateral {
-        grid-area: menu;
-        background-color: #1a1a2e;
-        color: #a0a0a0;
+/* --- CORREÇÃO AQUI: .Logo virou .logo (minúsculo) --- */
+.logo h2 {
+    color: #fff;
+    font-size: 1.25rem;
+    margin-bottom: 5px;
+}
 
-        /* Flexbox para organizar verticalmente*/
-        display: flex;
-        flex-direction: column;
-        padding: 20px;
-        gap: 30px;
-        border-right: 1px solid #2c2c44;
-    }
+.logo span {
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
 
-    /* 1. Estilo do Logotipo*/
-    .Logo h2 {
-        color: #fff;
-        font-size: 1.25rem;
-        margin-bottom: 5px;
-    }
+/* Estilo da Navegação */
+.menu-nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 
-    .Logo span {
-        font-size: 0.8rem;
-        /* Ligeramente Transparente */
-        opacity: 0.7;
+.menu-nav a,
+.menu-rodape a {
+    text-decoration: none;
+    color: #a0a0a0;
+    display: block;
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
 
-    }
+/* Hover e Ativo */
+.menu-nav a:hover,
+.menu-rodape a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    padding-left: 20px;
+}
 
-    /* 2. Estilo da Lista (Tirar as bolinhas)*/
-    .menu-nav ul {
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        /* Espaço entre os botões */
-        gap: 10px;
-    }
+.menu-nav a.ativo {
+    background-color: #e94560;
+    color: white;
+    box-shadow: 0 4px 15px rgba(233, 69, 96, 0.3);
+}
 
-    /*3 Esilo dos Links (Os Botões) */
-    .menu-nav a,
-    .menu-rodape a {
-        text-decoration: none;
-        /* Cor do texto normal */
-        color: #a0a0a0;
-        /* Ocupa a largura toda disponível */
-        display: block;
-        /* Área clicável maior */
-        padding: 12px 15px;
-        /* Cantos arredondados */
-        border-radius: 8px;
-        font-weight: 500;
-        /* Suaviza a animação de cor */
-        transition: all 0.3s;
-    }
+/* Rodapé do Menu */
+.menu-rodape {
+    margin-top: auto;
+    border-top: 1px solid #2c2c44;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
 
-    /* Efeito Hover (Quando passa o mouse por cima) */
-    /* Fundo claro transparente */
-    .menu-nav a:hover,
-    .menu-rodape a:hover {
-        /* Fundo claro transparente */
-        background-color: rgba(255, 255, 255, 0.1);
-        color: white;
-        /* Pequeno movimento para a direita */
-        padding-left: 20px;
-    }
+/* Conteúdo Principal */
+.conteudo-principal {
+    grid-area: principal;
+    background-color: #ecf0f1;
+    color: #333;
+    padding: 20px;
+    /* Adicionei um padding para o texto não colar na borda */
+}
 
-    /* Item Ativo (A página atual) */
-    .menu-nav a.ativo {
-        /* Vermelho/Rosa de destaque */
-        background-color: #e94560;
-        color: white;
-        /* Brilho suave */
-        box-shadow: 0 4px 15px rgba(233, 69, 96, 0.3);
-    }
+/* --- ESTILO DO CABEÇALHO --- */
+.cabecalho {
+    grid-area: topo;
+    background-color: #16213e;
+    border-bottom: 1px solid #2c2c44;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    color: white;
+}
 
-    /* 4. Rodapé do Menu (Empurrar para baixo) */
-    .menu-rodape {
-        margin-top: auto;
-        border-top: 1px solid #2c2c44;
-        padding-top: 20px;
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-    }
+.titulo-secao h1 {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
 
-    .cabecalho {
-        grid-area: topo;
-        background-color: #e67e22;
-    }
+.titulo-secao p {
+    font-size: 0.8rem;
+    color: #a0a0a0;
+    margin-top: 2px;
+}
 
-    .conteudo-principal {
-        grid-area: principal;
-        background-color: #ecf0f1;
-        color: #333;
-    }
+.info-usuario {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.status-sistema {
+    font-size: 0.8rem;
+    color: #2ecc71;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(46, 204, 113, 0.1);
+    padding: 6px 10px;
+    border-radius: 20px;
+}
+
+.bolinha-status {
+    width: 8px;
+    height: 8px;
+    background-color: #2ecc71;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #2ecc71;
+}
+
+.avatar-perfil {
+    width: 40px;
+    height: 40px;
+    background-color: #e94560;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
 }
