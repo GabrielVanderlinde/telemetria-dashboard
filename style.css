@@ -285,3 +285,90 @@ body {
     /* Deixa o card meio apagado */
     opacity: 0.7;
 }
+
+/* --- ESTILO DA SEÇÃO TABELA --- */
+
+.painel-tabela {
+    margin-top: 30px;
+    /* Espaço para desgrudar dos cards de cima */
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Cabeçalho com Título e Botão */
+.tabela-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.tabela-header h3 {
+    font-size: 1.1rem;
+    color: #1a1a2e;
+}
+
+/* Botão de Exportar (Decorativo) */
+.btn-exportar {
+    background-color: #1a1a2e;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: 0.2s;
+}
+
+.btn-exportar:hover {
+    background-color: #e94560;
+}
+
+/* --- A TABELA EM SI --- */
+.tabela-sensores {
+    width: 100%;
+    border-collapse: collapse;
+    /* Remove espaços duplos entre bordas */
+    font-size: 0.9rem;
+}
+
+/* Cabeçalho da Tabela (Titles) */
+.tabela-sensores th {
+    text-align: left;
+    padding: 15px;
+    background-color: #f8f9fa;
+    color: #666;
+    border-bottom: 2px solid #eee;
+}
+
+/* Células de Dados */
+.tabela-sensores td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    color: #333;
+}
+
+/* Efeito Zebra (Linhas pares ficam cinza claro) */
+/* Isso facilita muito a leitura! */
+.tabela-sensores tbody tr:hover {
+    background-color: #fafafa;
+    /* Leve destaque ao passar o mouse */
+}
+
+/* Badges Específicas da Tabela */
+.badge-amarelo {
+    background-color: #fcf3cf;
+    color: #d4ac0d;
+}
+
+.badge-vermelho {
+    background-color: #fadbd8;
+    color: #e74c3c;
+}
+
+.badge-cinza {
+    background-color: #eee;
+    color: #777;
+}
