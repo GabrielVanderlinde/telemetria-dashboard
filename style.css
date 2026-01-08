@@ -16,7 +16,7 @@ body {
     height: 100vh;
     grid-template-columns: 250px 1fr;
     /* Colunas */
-    grid-template-rows: 60px 1fr;
+    grid-template-rows: 100px 1fr;
     /* Linhas */
     grid-template-areas:
         "menu topo"
@@ -106,17 +106,17 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0px 30px;
+    padding: 0px 20px;
     color: white;
 }
 
 .titulo-secao h1 {
-    font-size: 1.2rem;
+    font-size: 2rem;
     font-weight: 600;
 }
 
 .titulo-secao p {
-    font-size: 0.8rem;
+    font-size: 1rem;
     color: #a0a0a0;
     margin-top: 2px;
 }
@@ -198,197 +198,39 @@ body {
     /* Espaço entre os cards */
     gap: 20px;
 }
+
 /* --- GRID DOS CARDS*/
-.grid-cards {
-    display: grid;
-    /* A MÁGICA: Encaixa quantos couberem, mínimo 260px de largura */
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    /* Espaço entre os cards */
-    gap: 20px;
-}
-
-/* Design do Card */
-.card {
+/* Estilo do Card de Clima */
+.weather-card {
     background: white;
+    border-radius: 8px;
     padding: 20px;
-    /*Arredonda Cantos*/
-    border-radius: 12px;
-    /*Sombra Leve*/
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-
-    /* Para alinhar conteúdo interno*/
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    /*Borda Colorida na Esquerda*/
-    border-left: 6px solid #ccc;
-    /*Animação Suave*/
-    transition: transform 0.2s;
-
-}
-
-.card:hover {
-    /*Sobe um pouco ao passar o Mouse*/
-    transform: translateY(-5px);
-}
-
-/* Conteúdo do Card */
-.card-titulo {
+    margin: 20px 0;
+    /* Espaço em cima e embaixo (área vermelha) */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #E63946;
+    /* Faixa vermelha para combinar com o tema */
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 500px;
 }
 
-.card-titulo h3 {
-    font-size: 1rem;
-    color: #555;
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.card-valor {
+.temp-destaque {
     font-size: 2.5rem;
     font-weight: bold;
-    color: #1a1a2e;
-}
-
-.card-info {
-    font-size: 0.85rem;
-    color: #888;
-}
-
-/* --- CORES DOS ESTADOS (As bordas laterais) --- */
-
-/* Normal - Verde */
-.status-ok {
-    border-left-color: #2ecc71;
-}
-
-.status-ok .badge {
-    color: #2ecc71;
-    background: #eafaf1;
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 0.75rem;
-    font-weight: bold;
-}
-
-/* Atenção - Amarelo */
-.status-atencao {
-    border-left-color: #f1c40f;
-}
-
-.status-atencao .badge {
-    color: #f1c40f;
-    background: #fcf3cf;
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 0.75rem;
-    font-weight: bold;
-}
-
-/* Alerta - Vermelho */
-.status-alerta {
-    border-left-color: #e74c3c;
-}
-
-.status-alerta .badge {
-    color: #e74c3c;
-    background: #fdecea;
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 0.75rem;
-    font-weight: bold;
-}
-
-/* Offline - Cinza */
-.status-offline {
-    border-left-color: #95a5a6;
-    /* Deixa o card meio apagado */
-    opacity: 0.7;
-}
-
-/* --- ESTILO DA SEÇÃO TABELA --- */
-
-.painel-tabela {
-    margin-top: 30px;
-    /* Espaço para desgrudar dos cards de cima */
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-}
-
-/* Cabeçalho com Título e Botão */
-.tabela-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.tabela-header h3 {
-    font-size: 1.1rem;
-    color: #1a1a2e;
-}
-
-/* Botão de Exportar (Decorativo) */
-.btn-exportar {
-    background-color: #1a1a2e;
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 0.8rem;
-    transition: 0.2s;
-}
-
-.btn-exportar:hover {
-    background-color: #e94560;
-}
-
-/* --- A TABELA EM SI --- */
-.tabela-sensores {
-    width: 100%;
-    border-collapse: collapse;
-    /* Remove espaços duplos entre bordas */
-    font-size: 0.9rem;
-}
-
-/* Cabeçalho da Tabela (Titles) */
-.tabela-sensores th {
-    text-align: left;
-    padding: 15px;
-    background-color: #f8f9fa;
-    color: #666;
-    border-bottom: 2px solid #eee;
-}
-
-/* Células de Dados */
-.tabela-sensores td {
-    padding: 15px;
-    border-bottom: 1px solid #eee;
     color: #333;
 }
 
-/* Efeito Zebra (Linhas pares ficam cinza claro) */
-/* Isso facilita muito a leitura! */
-.tabela-sensores tbody tr:hover {
-    background-color: #fafafa;
-    /* Leve destaque ao passar o mouse */
-}
-
-/* Badges Específicas da Tabela */
-.badge-amarelo {
-    background-color: #fcf3cf;
-    color: #d4ac0d;
-}
-
-.badge-vermelho {
-    background-color: #fadbd8;
-    color: #e74c3c;
-}
-
-.badge-cinza {
-    background-color: #eee;
-    color: #777;
+#cidade-desc {
+    text-transform: capitalize;
+    /* Primeira letra maiúscula */
+    color: #666;
+    margin: 0;
 }
