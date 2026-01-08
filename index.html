@@ -59,56 +59,27 @@
                 </div>
             </div>
 
-
-            <div class="painel-tabela">
-                <div class="tabela-header">
-                    <h3>Últimos Eventos Registrados</h3>
-                    <button class="btn-exportar">Exportar CSV</button>
+            <div id="card-clima" class="weather-card" style="display: none;">
+                <div class="card-header">
+                    <h3 id="cidade-nome">Cidade</h3>
                 </div>
-
-                <table class="tabela-sensores">
-                    <thead>
-                        <tr>
-                            <th>Horário</th>
-                            <th>Estação</th>
-                            <th>Nível (m)</th>
-                            <th>Situação</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>10:40</td>
-                            <td>Rio Itajaí-Açu</td>
-                            <td>3.45m</td>
-                            <td><span class="badge">Normal</span></td>
-                        </tr>
-                        <tr>
-                            <td>10:35</td>
-                            <td>Ribeirão Garcia</td>
-                            <td><strong>5.80m</strong></td>
-                            <td><span class="badge badge-amarelo">Atenção</span></td>
-                        </tr>
-                        <tr>
-                            <td>10:22</td>
-                            <td>Rio do Testo</td>
-                            <td><strong>8.91m</strong></td>
-                            <td><span class="badge badge-vermelho">Crítico</span></td>
-                        </tr>
-                        <tr>
-                            <td>09:15</td>
-                            <td>Sensor Velha</td>
-                            <td>--</td>
-                            <td><span class="badge badge-cinza">Falha</span></td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="card-body">
+                    <div class="temp-destaque">
+                        <span id="cidade-temp">0</span>°C
+                    </div>
+                    <p id="cidade-desc">Descrição</p>
+                    <div class="card-footer">
+                        <span>Umidade: <span id="cidade-umid">0</span>%</span>
+                    </div>
+                </div>
             </div>
 
-        </main>
     </div>
 
+    </main>
+    </div>
 
-
+    <script src="script.js"></script>
 </body>
 
 </html>
