@@ -234,3 +234,36 @@ body {
     color: #666;
     margin: 0;
 }
+
+/* MAPA DE RISCO */
+#secao-mapa iframe {
+    /* Faz a seção ocupar 100% da largura disponível */
+    width: 100%;
+    /* Adiciona uma animação suave ao aparecer */
+    animation: fadeIn 1s 0.5s;
+    border-radius: 8px;
+}
+
+.card-monitor-windy {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    height: 100%;
+}
+
+.card-monitor-windy h2 {
+    margin-bottom: 15px;
+    color: #1a1a2e;
+}
+
+/* Animação */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
