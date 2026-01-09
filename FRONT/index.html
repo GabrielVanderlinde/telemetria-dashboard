@@ -7,7 +7,7 @@
     <title>Painel Telemetria</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" type="image/png" href="FRONT/images/iconriver.png">
+    <link rel="shortcut icon" type="image/png" href="images/iconriver.png">
 </head>
 
 <body>
@@ -54,30 +54,32 @@
 
         <main class="conteudo-principal">
 
-            <div class="barra-pesquisa">
-                <div class="campo-pesquisa">
-                    <input type="text" placeholder="Pesquisar estação">
-                </div>
-            </div>
-
-            <div id="card-clima" class="weather-card" style="display: none;">
-                <div class="card-header">
-                    <h3 id="cidade-nome">Cidade</h3>
-                </div>
-                <div class="card-body">
-                    <div class="temp-destaque">
-                        <span id="cidade-temp">0</span>°C
-                    </div>
-                    <p id="cidade-desc">Descrição</p>
-                    <div class="card-footer">
-                        <span>Umidade: <span id="cidade-umid">0</span>%</span>
+            <section id="secao-geral">
+                <div class="barra-pesquisa">
+                    <div class="campo-pesquisa">
+                        <input type="text" placeholder="Pesquisar estação">
                     </div>
                 </div>
-            </div>
 
-            <div class="mapa-climatico">
+                <div id="card-clima" class="weather-card" style="display: none;">
+                    <div class="card-header">
+                        <h3 id="cidade-nome">Cidade</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="temp-destaque">
+                            <span id="cidade-temp">0</span>°C
+                        </div>
+                        <p id="cidade-desc">Descrição</p>
+                        <div class="card-footer">
+                            <span>Umidade: <span id="cidade-umid">0</span>%</span>
+                        </div>
+                    </div>
+                </div>
 
-            </div>
+                <div class="mapa-climatico">
+
+                </div>
+            </section>
 
     </div>
 
